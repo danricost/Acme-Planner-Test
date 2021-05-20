@@ -101,4 +101,111 @@
 		<property name="userAccount" ref="authenticatedUserAccount" />
 	</bean>
 	
+	<!-- Managers -->
+
+	<bean name="manager1UserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="manager1"/>
+		<property name="password" value="manager1"/>
+		<property name="enabled" value="true"/>	
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Manager"/>
+				<property name="surname" value="One"/>
+				<property name="email" value="manager1@mail.com"/>
+			</bean>
+		</property>	
+		<property name="roles">
+			<list>
+				<ref bean="manager1Manager"/>
+				<ref bean="manager1Authenticated"/>
+			</list>
+		</property>
+	</bean>
+
+	<bean name="manager1Manager" class="acme.entities.roles.Manager">
+		<property name="userAccount" ref="manager1UserAccount"/>
+	</bean>
+
+	<bean name="manager1Authenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="manager1UserAccount"/>
+	</bean>
+	
+	
+		<!-- SpamWord -->
+		
+		
+	<bean name="spamWord01" class="acme.entities.spamWord.SpamWord">
+		<property name="palabraSpam" value="sex" />
+	</bean>
+	
+	<bean name="spamWord02" class="acme.entities.spamWord.SpamWord">
+		<property name="palabraSpam" value="sexo" />
+	</bean>
+	
+	<bean name="spamWord03" class="acme.entities.spamWord.SpamWord">
+		<property name="palabraSpam" value="hard core" />
+	</bean>
+	
+	<bean name="spamWord04" class="acme.entities.spamWord.SpamWord">
+		<property name="palabraSpam" value="explícito" />
+	</bean>
+	
+	<bean name="spamWord05" class="acme.entities.spamWord.SpamWord">
+		<property name="palabraSpam" value="viagra" />
+	</bean>
+	
+	<bean name="spamWord06" class="acme.entities.spamWord.SpamWord">
+		<property name="palabraSpam" value="cialis" />
+	</bean>
+	
+	<bean name="spamWord07" class="acme.entities.spamWord.SpamWord">
+		<property name="palabraSpam" value="nigeria" />
+	</bean>
+	
+	<bean name="spamWord08" class="acme.entities.spamWord.SpamWord">
+		<property name="palabraSpam" value="you've won" />
+	</bean>
+	
+	<bean name="spamWord09" class="acme.entities.spamWord.SpamWord">
+		<property name="palabraSpam" value="has ganado" />
+	</bean>
+	
+	<bean name="spamWord10" class="acme.entities.spamWord.SpamWord">
+		<property name="palabraSpam" value="million dollar" />
+	</bean>
+	
+	<bean name="spamWord11" class="acme.entities.spamWord.SpamWord">
+		<property name="palabraSpam" value="millón de dolares" />
+	</bean>
+
+
+		
+		
+		<!-- Customization -->
+		
+		
+	<bean name="customization01" class="acme.entities.customization.Customization">
+	
+		<property name="tolerancia" value="10.0" />
+		<property name="palabrasSpam">
+			<list>
+				<ref bean="spamWord01"/>
+				<ref bean="spamWord02"/>
+				<ref bean="spamWord03"/>
+				<ref bean="spamWord04"/>
+				<ref bean="spamWord05"/>
+				<ref bean="spamWord06"/>
+				<ref bean="spamWord07"/>
+				<ref bean="spamWord08"/>
+				<ref bean="spamWord09"/>
+				<ref bean="spamWord10"/>
+				<ref bean="spamWord11"/>
+			</list>
+		</property>
+		
+	</bean>
+		
+		
+	
+	
 </beans>

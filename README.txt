@@ -9,7 +9,3 @@
 # they accept any liabilities with respect to them.
 
 This is the Acme Planner.
-
-GitHub repository: https://github.com/danricost/Acme-Planner
-CleverCloud credentials: gonrodter@alum.us.es
-

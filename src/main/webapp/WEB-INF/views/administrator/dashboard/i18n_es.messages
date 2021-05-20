@@ -14,13 +14,11 @@ administrator.dashboard.totalNumberPublicTask = Numero tareas publicas
 administrator.dashboard.totalNumberPrivateTask =  Número tareas privadas
 administrator.dashboard.totalNumberFinishedTask =  Número tareas finalizadas
 administrator.dashboard.totalNumberNonFinishedTask = Número tareas no finalizadas
-administrator.dashboard.averageTaskExecutionPeriods= Media periodo de ejecucion de tareas (Dias)
-administrator.dashboard.maxTaskExecutionPeriods= Maximo periodo de ejecucion de tareas (Dias)
-administrator.dashboard.minTaskExecutionPeriods= Minimo periodo de ejecucion de tareas (Dias)
-administrator.dashboard.deviationTaskExecutionPeriods = Desviacion del periodo de ejecucion de tareas (Dias)
+administrator.dashboard.averageTaskExecutionPeriods= Media periodo de ejecucion de tareas
+administrator.dashboard.maxTaskExecutionPeriods= Maximo periodo de ejecucion de tareas
+administrator.dashboard.minTaskExecutionPeriods= Minimo periodo de ejecucion de tareas
 administrator.dashboard.averageTaskWorkload = Media carga de trabajo de tareas
 administrator.dashboard.maxTaskWorkload = Maxima carga de trabajo de tareas
 administrator.dashboard.minTaskWorkload = Minima carga de trabajo de tareas
-administrator.dashboard.deviationTaskWorkload = Desviacion de carga de trabajo de tareas
 
 

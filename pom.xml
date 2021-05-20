@@ -18,11 +18,11 @@
 
 	<modelVersion>4.0.0</modelVersion>
 	
-	<name>Acme-Planner-Test</name>
-	<description>This is the Acme-Planner for the students of Design &amp; Testing.</description>
+	<name>Acme Planner</name>
+	<description>This is the Acme Planner for the students of Design &amp; Testing.</description>
 
-	<artifactId>Acme-Planner-Test</artifactId>
-	<version>21.4</version>
+	<artifactId>Acme-Planner</artifactId>
+	<version>21.2</version>
 	<packaging>war</packaging>
 
 	<parent>
@@ -179,14 +179,9 @@
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<!-- <scope>runtime</scope> -->
+			<scope>runtime</scope>
 		</dependency>
 		
-		<dependency>
-	    	<groupId>com.zaxxer</groupId>
-	        <artifactId>HikariCP</artifactId>	        
-	    </dependency>
-	    
 		<!-- Testing -->
 
 		<dependency>

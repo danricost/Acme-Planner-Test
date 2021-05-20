@@ -22,21 +22,21 @@
 	<!-- Shouts -->
 	
 	<bean id="shout01" class="acme.entities.shouts.Shout">
-		<property name="moment" value="2021/05/15 19:39"/>
+		<property name="moment" value="2021/04/15 19:39"/>
 		<property name="author" value="John Doe"/>
 		<property name="text" value="I'm happy!"/>
 		<property name="info"><null/></property>	
 	</bean>
 	
 	<bean id="shout02" class="acme.entities.shouts.Shout">
-		<property name="moment" value="2021/05/09 15:55"/>
+		<property name="moment" value="2021/04/09 15:55"/>
 		<property name="author" value="Jane Doe"/>
 		<property name="text" value="I'm the master of my room!"/>
 		<property name="info" value="http://www.example.org"/>		
 	</bean>
 	
 	<bean id="shout03" class="acme.entities.shouts.Shout">
-		<property name="moment" value="2021/04/29 00:00"/>
+		<property name="moment" value="2021/03/29 00:00"/>
 		<property name="author" value="Foo Bar"/>
 		<property name="text" value="Just turning 50!"/>
 		<property name="info" value="http://happybirthday.com"/>		
@@ -45,19 +45,19 @@
 	<bean id="shout04" class="acme.entities.shouts.Shout">
 		<property name="author" value="Leslie Design-Testing"/>
 		<property name="text" value="Woa! This app's so cool!"/>
-		<property name="moment" value="2021/05/13 12:30"/>
+		<property name="moment" value="2021/04/13 12:30"/>
 		<property name="info" value="http://www.sample-app.com"/>
 	</bean>
 	
 	<bean id="shout05" class="acme.entities.shouts.Shout">
-		<property name="moment" value="2021/04/28 17:40"/>
+		<property name="moment" value="2021/04/19 17:40"/>
 		<property name="author" value="Luis Caro"/>
 		<property name="text" value="What's up!"/>
 		<property name="info" value="http://www.example.org"/>		
 	</bean>
 	
 	<bean id="shout06" class="acme.entities.shouts.Shout">
-		<property name="moment" value="2021/05/03 10:40"/>
+		<property name="moment" value="2021/04/03 10:40"/>
 		<property name="author" value="Pablo León"/>
 		<property name="text" value="Hi!!"/>
 		<property name="info" value="http://www.example.org"/>		
@@ -76,6 +76,36 @@
 		<property name="text" value="How are you doing?"/>
 		<property name="info" value="http://www.example.org"/>		
 	</bean>
+	
+	
+	<!-- Managers -->
+	
+	<bean name="manager2UserAccount" class="acme.framework.entities.UserAccount">
+		<property name="username" value="manager2"/>
+		<property name="password" value="manager2"/>
+		<property name="enabled" value="true"/>	
+		<property name="identity">
+			<bean class="acme.datatypes.UserIdentity">
+				<property name="name" value="Manager"/>
+				<property name="surname" value="Two"/>
+				<property name="email" value="manager2@mail.com"/>
+			</bean>
+		</property>	
+		<property name="roles">
+			<list>
+				<ref bean="manager2Manager"/>
+				<ref bean="manager2Authenticated"/>
+			</list>
+		</property>
+	</bean>
+
+	<bean name="manager2Manager" class="acme.entities.roles.Manager">
+		<property name="userAccount" ref="manager2UserAccount"/>
+	</bean>
+
+	<bean name="manager2Authenticated" class="acme.framework.entities.Authenticated">
+		<property name="userAccount" ref="manager2UserAccount"/>
+	</bean>
 
 	<!--  Tasks -->
 	
@@ -86,6 +116,7 @@
 		<property name="workload" value="13.5"/>
 		<property name="description" value="Esto es un ejemplo de una tarea pública finalizada"/>
 		<property name="isPublic" value="True"/>
+		<property name="manager" ref="manager2Manager"/>
 	</bean>
 	
 	<bean id="task02" class="acme.entities.tasks.Task">
@@ -95,6 +126,7 @@
 		<property name="workload" value="20.4"/>
 		<property name="description" value="Esto es un ejemplo de una tarea privada finalizada"/>
 		<property name="isPublic" value="False"/>
+		<property name="manager" ref="manager2Manager"/>
 	</bean>
 	
 	<bean id="task03" class="acme.entities.tasks.Task">
@@ -104,6 +136,7 @@
 		<property name="workload" value="15.0"/>
 		<property name="description" value="Esto es un ejemplo de una tarea pública no finalizada"/>
 		<property name="isPublic" value="True"/>
+		<property name="manager" ref="manager2Manager"/>
 	</bean>
 	
 	<bean id="task04" class="acme.entities.tasks.Task">
@@ -113,6 +146,7 @@
 		<property name="workload" value="12.1"/>
 		<property name="description" value="Esto es un ejemplo de una tarea privada no finalizada"/>
 		<property name="isPublic" value="False"/>
+		<property name="manager" ref="manager2Manager"/>
 	</bean>
 	
 	<bean id="task05" class="acme.entities.tasks.Task">
@@ -122,6 +156,7 @@
 		<property name="workload" value="12.7"/>
 		<property name="description" value="Esto es un ejemplo de una tarea pública no finalizada"/>
 		<property name="isPublic" value="True"/>
+		<property name="manager" ref="manager2Manager"/>
 	</bean>
 	
 	<bean id="task06" class="acme.entities.tasks.Task">
@@ -131,6 +166,7 @@
 		<property name="workload" value="13.4"/>
 		<property name="description" value="Esto es un ejemplo de una tarea privada no finalizada"/>
 		<property name="isPublic" value="False"/>
+		<property name="manager" ref="manager2Manager"/>
 	</bean>
 	
 	<bean id="task07" class="acme.entities.tasks.Task">
@@ -140,6 +176,7 @@
 		<property name="workload" value="15.2"/>
 		<property name="description" value="Esto es un ejemplo de una tarea pública no finalizada"/>
 		<property name="isPublic" value="True"/>
+		<property name="manager" ref="manager2Manager"/>
 	</bean>
 	
 	<bean id="task08" class="acme.entities.tasks.Task">
@@ -149,6 +186,7 @@
 		<property name="workload" value="13.7"/>
 		<property name="description" value="Esto es un ejemplo de una tarea pública no finalizada"/>
 		<property name="isPublic" value="True"/>
+		<property name="manager" ref="manager2Manager"/>
 	</bean>
 	
 	<bean id="task09" class="acme.entities.tasks.Task">
@@ -158,6 +196,7 @@
 		<property name="workload" value="13.4"/>
 		<property name="description" value="Esto es un ejemplo de una tarea pública no finalizada"/>
 		<property name="isPublic" value="True"/>
+		<property name="manager" ref="manager2Manager"/>
 	</bean>
 	
 	<bean id="task10" class="acme.entities.tasks.Task">
@@ -167,6 +206,7 @@
 		<property name="workload" value="14.5"/>
 		<property name="description" value="Esto es un ejemplo de una tarea pública no finalizada"/>
 		<property name="isPublic" value="True"/>
+		<property name="manager" ref="manager2Manager"/>
 	</bean>
 	
 	<bean id="task11" class="acme.entities.tasks.Task">
@@ -176,6 +216,7 @@
 		<property name="workload" value="15.1"/>
 		<property name="description" value="Esto es un ejemplo de una tarea pública finalizada"/>
 		<property name="isPublic" value="True"/>
+		<property name="manager" ref="manager2Manager"/>
 	</bean>
 	
 	<bean id="task12" class="acme.entities.tasks.Task">
@@ -185,6 +226,7 @@
 		<property name="workload" value="11.9"/>
 		<property name="description" value="Esto es un ejemplo de una tarea pública finalizada"/>
 		<property name="isPublic" value="True"/>
+		<property name="manager" ref="manager2Manager"/>
 	</bean>
 	
 	<bean id="task13" class="acme.entities.tasks.Task">
@@ -194,6 +236,7 @@
 		<property name="workload" value="14.8"/>
 		<property name="description" value="Esto es un ejemplo de una tarea pública finalizada"/>
 		<property name="isPublic" value="True"/>
+		<property name="manager" ref="manager2Manager"/>
 	</bean>
 	
 	<bean id="task14" class="acme.entities.tasks.Task">
@@ -203,6 +246,7 @@
 		<property name="workload" value="13.3"/>
 		<property name="description" value="Esto es un ejemplo de una tarea pública finalizada"/>
 		<property name="isPublic" value="True"/>
+		<property name="manager" ref="manager2Manager"/>
 	</bean>
 	
 	<bean id="task15" class="acme.entities.tasks.Task">
@@ -212,6 +256,7 @@
 		<property name="workload" value="12.5"/>
 		<property name="description" value="Esto es un ejemplo de una tarea pública finalizada"/>
 		<property name="isPublic" value="True"/>
+		<property name="manager" ref="manager2Manager"/>
 	</bean>
 
 </beans>

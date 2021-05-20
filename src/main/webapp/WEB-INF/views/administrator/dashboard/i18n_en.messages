@@ -14,12 +14,10 @@ administrator.dashboard.totalNumberPublicTask = Number of public task
 administrator.dashboard.totalNumberPrivateTask =  Number of private task
 administrator.dashboard.totalNumberFinishedTask =  Number of finished task
 administrator.dashboard.totalNumberNonFinishedTask = Number of non finished task
-administrator.dashboard.averageTaskExecutionPeriods= Average task execution periods (Days)
-administrator.dashboard.maxTaskExecutionPeriods= Maximum task execution periods (Days)
-administrator.dashboard.minTaskExecutionPeriods= Minimum task execution periods (Days)
-administrator.dashboard.deviationTaskExecutionPeriods = Deviation task execution periods (Days)
+administrator.dashboard.averageTaskExecutionPeriods= Average task execution periods
+administrator.dashboard.maxTaskExecutionPeriods= Maximum task execution periods
+administrator.dashboard.minTaskExecutionPeriods= Minimum task execution periods
 administrator.dashboard.averageTaskWorkload = Average task workload
 administrator.dashboard.maxTaskWorkload = Maximum task workload
 administrator.dashboard.minTaskWorkload = Minimum task workload
-administrator.dashboard.deviationTaskWorkload = Deviation task workload
 

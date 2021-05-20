@@ -1,0 +1,31 @@
+# i18n_es.messages
+#
+# Copyright (C) 2012-2021 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+manager.task.form.label.title = Título
+manager.task.form.label.initialMoment = Inicio
+manager.task.form.label.finalMoment = Fin
+manager.task.form.label.workload = Carga de trabajo
+manager.task.form.label.description = Descripción
+manager.task.form.label.isPublic = Es pública
+
+manager.task.form.button.create = Crear
+manager.task.form.button.update = Editar
+manager.task.form.button.delete = Borrar
+manager.task.form.button.return = Volver
+
+manager.task.list.label.title = Título
+manager.task.list.label.initialMoment = Inicio
+manager.task.list.label.finalMoment = Fin
+manager.task.list.label.workload = Carga de trabajo
+manager.task.list.label.description = Descripción
+manager.task.list.label.isPublic = Es pública
+
+manager.task.create.error.label.title = El título es considerado spam
+manager.task.create.error.label.description = La descripción es considerada spam

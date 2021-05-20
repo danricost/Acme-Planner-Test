@@ -15,20 +15,14 @@ package acme.framework.helpers;
 import java.util.Collection;
 import java.util.Iterator;
 
-import org.springframework.web.util.HtmlUtils;
-
 public class StringHelper {
 
-	// Internal state ---------------------------------------------------------
-
 	// Constructors -----------------------------------------------------------
-
 
 	protected StringHelper() {
 	}
 
 	// Business methods -------------------------------------------------------
-
 
 	public static boolean isBlank(final CharSequence text) {
 		// text is nullable
@@ -191,15 +185,5 @@ public class StringHelper {
 
 		return result.toString();
 	}
-
-	public static String toHtml(final String text) {
-		assert text != null;
-		
-		String result;
-		
-		result = HtmlUtils.htmlEscape(text);
-		
-		return result;		         
-    }
 
 }

@@ -1,4 +1,3 @@
-
 /*
  * AdministratorDashboardRepository.java
  *
@@ -42,21 +41,13 @@ public interface AdministratorDashboardRepository extends AbstractRepository {
 	@Query("select min(t.workload) from Task t")
 	Double findMinTaskWorkload();	
 	
-	@Query("select stddev(t.workload) from Task t")
-	Double findDeviationTaskWorkload();	
-	
-	@Query("select avg(datediff(t.finalMoment, t.initialMoment)) from Task t")
+	@Query("select avg(t.finalMoment-t.initialMoment) from Task t")
 	Double findAverageTaskExecutionPeriods();	
 	
-	@Query("select max(datediff(t.finalMoment, t.initialMoment)) from Task t")
+	@Query("select max(t.finalMoment-t.initialMoment) from Task t")
 	Double findMaxTaskExecutionPeriods();	
 	
-	@Query("select min(datediff(t.finalMoment, t.initialMoment)) from Task t")
+	@Query("select min(t.finalMoment-t.initialMoment) from Task t")
 	Double findMinTaskExecutionPeriods();	
-	
-	@Query("select stddev(datediff(t.finalMoment, t.initialMoment)) from Task t")
-	Double findDeviationTaskExecutionPeriods();	
-
-
 }
 	

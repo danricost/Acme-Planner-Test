@@ -34,9 +34,9 @@ public class Dashboard implements Serializable {
 	Double						averageTaskExecutionPeriods;
 	Double						minTaskExecutionPeriods;
 	Double						maxTaskExecutionPeriods;
-	Double						deviationTaskExecutionPeriods;
+//	Double						deviationTaskExecutionPeriods;
 	Double						averageTaskWorkload;
-	Double						deviationTaskWorkload;
+//	Double						deviationTaskWorkload;
 	Double						minTaskWorkload;
 	Double						maxTaskWorkload;
 

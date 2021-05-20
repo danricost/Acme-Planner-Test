@@ -3,13 +3,16 @@ package acme.entities.tasks;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
 
+import acme.entities.roles.Manager;
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -50,5 +53,9 @@ public class Task extends DomainEntity{
 	// Derived attributes -----------------------------------------------------
 	
 	// Relationships ----------------------------------------------------------
+	
+	@Valid
+	@ManyToOne(optional = true)
+	protected Manager manager;
 	
 }
