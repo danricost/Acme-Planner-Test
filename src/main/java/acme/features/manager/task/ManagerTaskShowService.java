@@ -1,9 +1,5 @@
 package acme.features.manager.task;
 
-import java.time.LocalDate;
-import java.time.ZoneId;
-import java.util.Date;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,7 +29,7 @@ public class ManagerTaskShowService implements AbstractShowService<Manager, Task
 		
 		id = request.getModel().getInteger("id");
 		result = this.repository.findOneTaskById(id);
-		if(!result.getIsPublic() || !result.getFinalMoment().after(Date.from(LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant())))
+		if(result.getManager().getId() != request.getPrincipal().getAccountId())
 			sol = false;
 
 		return sol;
