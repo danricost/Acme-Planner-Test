@@ -28,4 +28,4 @@ manager.task.list.label.description = Description
 manager.task.list.label.isPublic = Is public
 
 manager.task.create.error.label.title = The title is considered spam
-manager.task.create.error.label.description = The description is considered spam
+manager.task.create.error.label.description = More than 10% spamWords

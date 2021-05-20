@@ -80,20 +80,21 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		return boleano;
 	}
 
+
 	@Override
 	public void validate(final Request<Task> request, final Task entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
 		
+		final List<Customization> repo= this.repository.findCustomization();
 		
-		final List<Customization> repo = this.repository.findCustomization();
+		String res;
+		res= entity.getDescription().concat(" ").concat(entity.getTitle());
+			
 		
-//		if(ManagerTaskCreateService.esSpam(repo.get(0).getPalabrasSpam(), entity.getTitle(), repo.get(0).getTolerancia())) {
-//			errors.state(request, false, "title", "manager.task.create.error.label.title");
-//		}
 		
-		if(ManagerTaskCreateService.esSpam(repo.get(0).getPalabrasSpam(), entity.getDescription(), repo.get(0).getTolerancia())) {
+		if(ManagerTaskCreateService.esSpam(repo.get(0).getPalabrasSpam(), res, repo.get(0).getTolerancia())) {
 			errors.state(request, false, "description", "manager.task.create.error.label.description");
 		}
 		
