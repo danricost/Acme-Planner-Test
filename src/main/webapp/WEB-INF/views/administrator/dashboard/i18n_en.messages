@@ -1,0 +1,25 @@
+# i18n_en.messages
+#
+# Copyright (C) 2012-2021 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+administrator.dashboard.title  = Dashboard
+
+administrator.dashboard.totalNumberPublicTask = Number of public task
+administrator.dashboard.totalNumberPrivateTask =  Number of private task
+administrator.dashboard.totalNumberFinishedTask =  Number of finished task
+administrator.dashboard.totalNumberNonFinishedTask = Number of non finished task
+administrator.dashboard.averageTaskExecutionPeriods= Average task execution periods (Days)
+administrator.dashboard.maxTaskExecutionPeriods= Maximum task execution periods (Days)
+administrator.dashboard.minTaskExecutionPeriods= Minimum task execution periods (Days)
+administrator.dashboard.deviationTaskExecutionPeriods = Deviation task execution periods (Days)
+administrator.dashboard.averageTaskWorkload = Average task workload
+administrator.dashboard.maxTaskWorkload = Maximum task workload
+administrator.dashboard.minTaskWorkload = Minimum task workload
+administrator.dashboard.deviationTaskWorkload = Deviation task workload
+

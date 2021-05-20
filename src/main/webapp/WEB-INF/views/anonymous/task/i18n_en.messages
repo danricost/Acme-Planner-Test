@@ -1,0 +1,22 @@
+# i18n_en.messages
+#
+# Copyright (C) 2012-2021 Rafael Corchuelo.
+#
+# In keeping with the traditional purpose of furthering education and research, it is
+# the policy of the copyright owner to permit non-commercial use and redistribution of
+# this software. It has been tested carefully, but it is not guaranteed for any particular
+# purposes.  The copyright owner does not offer any warranties or representations, nor do
+# they accept any liabilities with respect to them.
+
+anonymous.task.form.label.title = Title
+anonymous.task.form.label.initialMoment = Beginning
+anonymous.task.form.label.finalMoment = End
+anonymous.task.form.button.workload = Expected hours
+anonymous.task.form.button.description = Description
+anonymous.task.form.button.isPublic = Is a public task?
+anonymous.task.form.button.return = Return
+ 
+anonymous.task.list.label.title = Title
+anonymous.task.list.label.initialMoment = Beginning
+anonymous.task.list.label.finalMoment = End
+anonymous.task.list.label.workload = Expected hours
