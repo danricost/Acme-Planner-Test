@@ -19,4 +19,4 @@ anonymous.shout.list.label.author = Autor
 anonymous.shout.list.label.text = Texto
 
 
-anonymous.shout.create.error.label.text=Errores en la descripcion
+anonymous.shout.create.error.label.text=Más del 10% de palabras Spam

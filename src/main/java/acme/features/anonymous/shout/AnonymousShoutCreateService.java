@@ -123,8 +123,14 @@ public class AnonymousShoutCreateService implements AbstractCreateService<Anonym
 		assert errors != null;
 		
 		final List<Customization> repo= this.repository.findCustomization();
+		
+		String res;
+		res= entity.getAuthor().concat(" ").concat(entity.getText());
 			
-		if(AnonymousShoutCreateService.esSpam(repo.get(0).getPalabrasSpam(), entity.getText(), repo.get(0).getTolerancia())) {
+		
+		
+		//if(AnonymousShoutCreateService.esSpam(repo.get(0).getPalabrasSpam(), entity.getText(), repo.get(0).getTolerancia())) {
+		if(AnonymousShoutCreateService.esSpam(repo.get(0).getPalabrasSpam(), res, repo.get(0).getTolerancia())) {
 			
 			errors.state(request, false, "text", "anonymous.shout.create.error.label.text");
 		}
