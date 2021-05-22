@@ -29,3 +29,5 @@ manager.task.list.label.isPublic = Is public
 
 manager.task.create.error.label.title = The title is considered spam
 manager.task.create.error.label.description = More than 10% spamWords
+manager.task.create.error.label.finalMoment = The Final moment cannot be before the Initial moment
+manager.task.create.error.label.workload = The workload cannot be greater than the time between the initial moment and the final moment of the task

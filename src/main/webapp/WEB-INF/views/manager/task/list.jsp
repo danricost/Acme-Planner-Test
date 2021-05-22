@@ -21,5 +21,4 @@
 	<acme:list-column code="manager.task.list.label.finalMoment" path="finalMoment" width="80%"/>
 	<acme:list-column code="manager.task.list.label.workload" path="workload" width="80%"/>
 	<acme:list-column code="manager.task.list.label.description" path="description" width="80%"/>
-	<acme:list-column code="manager.task.list.label.isPublic" path="isPublic" width="80%"/>
 </acme:list>
