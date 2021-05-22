@@ -21,7 +21,6 @@
 	<acme:form-moment code="manager.task.form.label.finalMoment" path="finalMoment"/>
 	<acme:form-double code="manager.task.form.label.workload" path="workload"/>
 	<acme:form-textarea code="manager.task.form.label.description" path="description"/>
-	<acme:form-checkbox code="manager.task.form.label.isPublic" path="isPublic"/>
 			
 	<acme:form-submit test="${command == 'show'}" code="manager.task.form.button.update" action="/manager/task/update"/>
 	<acme:form-submit test="${command == 'show' }" code="manager.task.form.button.delete" action="/manager/task/delete"/>

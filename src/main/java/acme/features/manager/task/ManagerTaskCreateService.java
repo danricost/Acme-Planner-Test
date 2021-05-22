@@ -12,6 +12,7 @@
 
 package acme.features.manager.task;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -98,6 +99,22 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 			errors.state(request, false, "description", "manager.task.create.error.label.description");
 		}
 		
+		if (!errors.hasErrors("finalMoment")) {
+			final Date finalMom = entity.getFinalMoment();
+			final Date initialMom = entity.getInitialMoment();
+			
+			errors.state(request, finalMom.compareTo(initialMom) > 0, "finalMoment", "manager.task.create.error.label.finalMoment");
+		}
+		
+		if (!errors.hasErrors("workload")) {
+			final Date finalMom = entity.getFinalMoment();
+			final Date initialMom = entity.getInitialMoment();
+			
+			final Long maxWorkload = finalMom.getTime() - initialMom.getTime();
+			
+			errors.state(request, entity.getWorkload()*3600000 <= maxWorkload, "workload", "manager.task.create.error.label.workload");
+		}
+		
 	}
 
 	@Override
@@ -115,7 +132,7 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "initialMoment", "finalMoment", "workload", "description", "isPublic");
+		request.unbind(entity, model, "title", "initialMoment", "finalMoment", "workload", "description");
 	}
 
 	@Override
@@ -127,7 +144,8 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 
 		manager = this.repository.findOneManagerById(request.getPrincipal().getActiveRoleId());
 		result = new Task();
-		result.setManager(manager);;
+		result.setManager(manager);
+		result.setIsPublic(false);
 
 		return result;
 	}
