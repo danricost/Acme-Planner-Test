@@ -44,6 +44,8 @@ master.menu.administrator.populate-initial = Populate DB (initial)
 master.menu.administrator.populate-sample = Populate DB (samples)
 master.menu.administrator.shutdown = Shut down
 master.menu.administrator.dashboard = Dashboard
+master.menu.administrator.threshold = Threshold
+master.menu.administrator.spamwords = Spam Words
 
 
 # master.menu.authenticated ########################################################
