@@ -31,3 +31,6 @@ manager.task.create.error.label.title = El título es considerado spam
 manager.task.create.error.label.description = Más del 10% de palabras Spam
 manager.task.create.error.label.finalMoment = El momento final no puede ser antes del momento inicial
 manager.task.create.error.label.workload = La carga de trabajo no puede ser mayor del tiempo que hay entre el inicio y final de la tarea
+
+manager.task.create.error.label.initialMoment=La fecha inicial esta en pasado
+manager.task.create.error.label.finalMoment= La fecha final esta en pasado
