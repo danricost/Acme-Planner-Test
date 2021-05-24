@@ -134,7 +134,7 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "initialMoment", "finalMoment", "workload", "description");
+		request.unbind(entity, model, "title", "initialMoment", "finalMoment", "workload", "description", "isPublic");
 	}
 
 	@Override
