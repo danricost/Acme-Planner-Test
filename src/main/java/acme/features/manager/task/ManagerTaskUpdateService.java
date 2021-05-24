@@ -12,6 +12,8 @@
 
 package acme.features.manager.task;
 
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.Date;
 import java.util.List;
 
@@ -89,6 +91,14 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 			final Long maxWorkload = finalMom.getTime() - initialMom.getTime();
 			
 			errors.state(request, entity.getWorkload()*3600000 <= maxWorkload, "workload", "manager.task.create.error.label.workload");
+		}
+		
+
+		if(entity.getInitialMoment().before(Date.from(LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant()))) {
+			errors.state(request, false, "initialMoment", "manager.task.create.error.label.initialMoment");
+		}
+		if(entity.getFinalMoment().before(Date.from(LocalDate.now().atStartOfDay(ZoneId.systemDefault()).toInstant()))) {
+			errors.state(request, false , "finalMoment", "manager.task.create.error.label.finalMoment");
 		}
 		
 	}
