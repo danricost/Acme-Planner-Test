@@ -88,15 +88,17 @@ public class ManagerTaskCreateService implements AbstractCreateService<Manager, 
 		assert entity != null;
 		assert errors != null;
 		
+
 		final List<Customization> repo= this.repository.findCustomization();
 		
 		String res;
-		res= entity.getDescription().concat(" ").concat(entity.getTitle());
+		res= entity.getTitle().concat(" ").concat(entity.getDescription());
 			
 		
 		
 		if(ManagerTaskCreateService.esSpam(repo.get(0).getPalabrasSpam(), res, repo.get(0).getTolerancia())) {
-			errors.state(request, false, "description", "manager.task.create.error.label.description");
+			
+			errors.state(request, false, "description", "anonymous.shout.create.error.label.text");
 		}
 		
 		if (!errors.hasErrors("finalMoment")) {

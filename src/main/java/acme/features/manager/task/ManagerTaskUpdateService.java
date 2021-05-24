@@ -12,6 +12,7 @@
 
 package acme.features.manager.task;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,22 +56,41 @@ public class ManagerTaskUpdateService implements AbstractUpdateService<Manager, 
 
 		return result;
 	}
-
 	@Override
 	public void validate(final Request<Task> request, final Task entity, final Errors errors) {
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
 		
-		final List<Customization> repo = this.repository.findCustomization();
 
-		if(ManagerTaskCreateService.esSpam(repo.get(0).getPalabrasSpam(), entity.getTitle(), repo.get(0).getTolerancia())) {
-			errors.state(request, false, "title", "manager.task.create.error.label.title");
+		final List<Customization> repo= this.repository.findCustomization();
+		
+		String res;
+		res= entity.getTitle().concat(" ").concat(entity.getDescription());
+			
+		
+		
+		if(ManagerTaskCreateService.esSpam(repo.get(0).getPalabrasSpam(), res, repo.get(0).getTolerancia())) {
+			
+			errors.state(request, false, "description", "anonymous.shout.create.error.label.text");
 		}
 		
-		if(ManagerTaskCreateService.esSpam(repo.get(0).getPalabrasSpam(), entity.getDescription(), repo.get(0).getTolerancia())) {
-			errors.state(request, false, "description", "manager.task.create.error.label.description");
-		}	
+		if (!errors.hasErrors("finalMoment")) {
+			final Date finalMom = entity.getFinalMoment();
+			final Date initialMom = entity.getInitialMoment();
+			
+			errors.state(request, finalMom.compareTo(initialMom) > 0, "finalMoment", "manager.task.create.error.label.finalMoment");
+		}
+		
+		if (!errors.hasErrors("workload")) {
+			final Date finalMom = entity.getFinalMoment();
+			final Date initialMom = entity.getInitialMoment();
+			
+			final Long maxWorkload = finalMom.getTime() - initialMom.getTime();
+			
+			errors.state(request, entity.getWorkload()*3600000 <= maxWorkload, "workload", "manager.task.create.error.label.workload");
+		}
+		
 	}
 
 	@Override
